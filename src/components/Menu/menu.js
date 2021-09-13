@@ -1,13 +1,18 @@
 import React, { Fragment } from "react";
 import { Card, Col, Row } from "react-bootstrap";
+// images
 import image from "../../assets/besttaco.webp";
 import image2 from "../../assets/satacos.webp";
-import lemon from "../../assets/angelica-echeverry-t261fCT-lEc-unsplash.jpg";
-import bRed from "../../assets/bigred.png";
-import sweetTea from "../../assets/crystal-huff-CCowelQ2pLw-unsplash.jpg";
-import water from "../../assets/lennart-schneider-RjiHJrowSi8-unsplash.jpg";
+import lemon from "../../assets/laura-chouette-TecD-1MTMiE-unsplash.webp";
+import bRed from "../../assets/bigred.webp";
+import sweetTea from "../../assets/crystal-huff-CCowelQ2pLw-unsplash.webp";
+import water from "../../assets/lennart-schneider-RjiHJrowSi8-unsplash.webp";
+// animation
 import { motion } from "framer-motion";
+// routing
 import { Link } from "react-router-dom";
+// custom components
+import Footer from "../Footer/footer";
 
 const exit = {
   exit: {
@@ -48,7 +53,7 @@ export default function Menu() {
               <span style={{ fontFamily: "Caveat" }}>go back</span>
             </Link>
             <Link
-              to="/contact"
+              to="/location"
               style={{ textDecoration: "none", color: "#ef426f" }}
             >
               <span style={{ fontFamily: "Caveat" }}>find us</span>
@@ -265,6 +270,7 @@ export default function Menu() {
                   borderBottomLeftRadius: "15px",
                   borderBottomRightRadius: "15px",
                   objectFit: "cover",
+                  objectPostion: "0% -0%",
                 }}
               />
               <Card.Body>
@@ -346,6 +352,9 @@ export default function Menu() {
           </Col>
         </Row>
       </motion.div>
+      <div className="pt-4">
+        <Footer />
+      </div>
     </Fragment>
   );
 }

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Row, Col, Button, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../../assets/IMG_6440-removebg-preview.png";
@@ -17,10 +17,10 @@ const transition = {
 
 export default function Landing() {
   return (
-    <motion.div {...exit} transitioin={transition} style={{ height: "100vh" }}>
+    <motion.div {...exit} transition={transition} style={{ height: "100vh" }}>
       <section
         style={{
-          height: "100%",
+          height: "100vh",
           width: "100%",
           backgroundColor: "#171717",
           display: "flex",
