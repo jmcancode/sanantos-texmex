@@ -11,7 +11,7 @@ export default function Routes(props) {
   const location = useLocation();
 
   return (
-    <AnimatePresence initial={true} exitBeforeEnter>
+    <AnimatePresence initial={false} exitBeforeEnter>
       <Switch location={location} key={location.pathname}>
         <Route exact path="/menu" component={Menu} />
         <Route exact path="/location" component={Location} />

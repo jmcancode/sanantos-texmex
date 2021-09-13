@@ -1,5 +1,5 @@
-import React from "react";
-import { Row, Col } from "react-bootstrap";
+import React, { useState } from "react";
+import { Row, Col, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -15,6 +15,21 @@ const transition = {
 };
 
 export default function Location() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const submitForm = () => {
+    window.open(
+      `mailto:narvaez.jonmichael@gmail.com?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(name)} (${encodeURIComponent(
+        email
+      )}): ${encodeURIComponent(message)}`
+    );
+  };
+
   return (
     <motion.div {...exit} transition={transition} className="container">
       <Row className="p-3">
@@ -68,12 +83,127 @@ export default function Location() {
           </Link> */}
         </Col>
       </Row>
-      <Row xs={1} md={1} lg={1} className="pt-4">
-        <Col>
-          <h1 style={{ color: "#ff8200", letterSpacing: "1.3px" }}>Connect</h1>
-        </Col>
-        <Col className="m-2"></Col>
-      </Row>
+      <section
+        id="contact"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-around",
+        }}
+      >
+        <div>
+          <Row xs={1} md={1} lg={1} className="pt-4">
+            <Col className="m-2">
+              <h1 style={{ color: "#ff8200", letterSpacing: "1.3px" }}>
+                Connect
+              </h1>
+              <p style={{ fontSize: "13px", color: "#777" }}>
+                Interest in catering services or large orders? Send us an email
+                and we will reach out to you with in 24 hours.
+              </p>
+            </Col>
+          </Row>
+        </div>
+        <div>
+          <Row>
+            <Col>
+              <Form onSubmit={submitForm}>
+                <Form.Group className="m-2">
+                  <Form.Control
+                    type="text"
+                    placeholder="Full Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    style={{
+                      backgroundColor: "transparent",
+                      borderTopColor: "transparent",
+                      borderRightColor: "transparent",
+                      borderLeftColor: "transparent",
+                      borderBottomRightRadius: "0px",
+                      borderBottomLeftRadius: "0px",
+                    }}
+                  />
+                </Form.Group>
+                <Form.Group className="m-2">
+                  <Form.Control
+                    type="text"
+                    placeholder="someemail@gmail.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    style={{
+                      backgroundColor: "transparent",
+                      borderTopColor: "transparent",
+                      borderRightColor: "transparent",
+                      borderLeftColor: "transparent",
+                      borderBottomRightRadius: "0px",
+                      borderBottomLeftRadius: "0px",
+                    }}
+                  />
+                </Form.Group>
+                <Form.Group className="m-2">
+                  <Form.Control
+                    type="text"
+                    placeholder="Subject"
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
+                    style={{
+                      backgroundColor: "transparent",
+                      borderTopColor: "transparent",
+                      borderRightColor: "transparent",
+                      borderLeftColor: "transparent",
+                      borderBottomRightRadius: "0px",
+                      borderBottomLeftRadius: "0px",
+                    }}
+                  />
+                </Form.Group>
+                <Form.Group className="m-2">
+                  <Form.Control
+                    type="textarea"
+                    row={5}
+                    cols={5}
+                    placeholder="Type here"
+                    value={subject}
+                    onChange={(e) => setMessage(e.target.value)}
+                    style={{
+                      backgroundColor: "transparent",
+                      borderTopColor: "transparent",
+                      borderRightColor: "transparent",
+                      borderLeftColor: "transparent",
+                      borderBottomRightRadius: "0px",
+                      borderBottomLeftRadius: "0px",
+                    }}
+                  />
+                </Form.Group>
+                <div className="d-grid gap-2 pt-3">
+                  <Button
+                    style={{
+                      backgroundColor: "#00b2a9",
+                      borderColor: "transparent",
+                    }}
+                    type="submit"
+                  >
+                    Submit
+                  </Button>
+                </div>
+              </Form>
+            </Col>
+          </Row>
+        </div>
+        <div
+          className="pt-5"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around",
+          }}
+        >
+          <Row>
+            <Col>Instagram</Col>
+            <Col>Twitter</Col>
+            <Col>Facebook</Col>
+          </Row>
+        </div>
+      </section>
     </motion.div>
   );
 }

@@ -8,7 +8,7 @@ import Routes from "./components/Routes/routes";
 function App() {
   return (
     <Router>
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence initial={false} exitBeforeEnter>
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route component={Routes} />
