@@ -56,7 +56,7 @@ export default function Menu() {
               to="/location"
               style={{ textDecoration: "none", color: "#ef426f" }}
             >
-              <span style={{ fontFamily: "Caveat" }}>find us</span>
+              <span style={{ fontFamily: "Caveat" }}>Let's Chat</span>
               <svg
                 stroke="currentColor"
                 fill="currentColor"
@@ -74,7 +74,7 @@ export default function Menu() {
 
         <Row xs={1} md={1} lg={1} className="pt-4">
           <Col>
-            <h1 style={{ color: "#ff8200" }}>Menu</h1>
+            <h1 style={{ color: "#ff8200", letterSpacing: "1.3px" }}>Menu</h1>
           </Col>
           <Col className="m-2">
             <h5>Breakfast Tacos</h5>

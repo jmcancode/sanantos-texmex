@@ -40,7 +40,7 @@ export default function Location() {
             </svg>
             <span style={{ fontFamily: "Caveat" }}>go back</span>
           </Link>
-          <Link
+          {/* <Link
             to="/connect"
             style={{ textDecoration: "none", color: "#ef426f" }}
           >
@@ -65,12 +65,12 @@ export default function Location() {
                 clip-rule="evenodd"
               ></path>
             </svg>
-          </Link>
+          </Link> */}
         </Col>
       </Row>
       <Row xs={1} md={1} lg={1} className="pt-4">
         <Col>
-          <h1 style={{ color: "#ff8200" }}>Find Us</h1>
+          <h1 style={{ color: "#ff8200", letterSpacing: "1.3px" }}>Connect</h1>
         </Col>
         <Col className="m-2"></Col>
       </Row>

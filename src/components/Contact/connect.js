@@ -43,34 +43,13 @@ export default function Connect() {
             </svg>
             <span style={{ fontFamily: "Caveat" }}>go back</span>
           </Link>
-          {/* <Link to="/menu" style={{ textDecoration: "none", color: "#ef426f" }}>
-            <span style={{ fontFamily: "Caveat" }}>Connect with us</span>
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              stroke-width="0"
-              viewBox="0 0 16 16"
-              height="1em"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10.146 4.646a.5.5 0 01.708 0l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708-.708L12.793 8l-2.647-2.646a.5.5 0 010-.708z"
-                clip-rule="evenodd"
-              ></path>
-              <path
-                fill-rule="evenodd"
-                d="M2 8a.5.5 0 01.5-.5H13a.5.5 0 010 1H2.5A.5.5 0 012 8z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-          </Link> */}
         </Col>
       </Row>
       <Row xs={1} md={1} lg={1} className="pt-4">
         <Col>
-          <h1 style={{ color: "#ff8200" }}>Lets Chat</h1>
+          <h1 style={{ color: "#ff8200", letterSpacing: "1.3px" }}>
+            Let's Chat
+          </h1>
         </Col>
         <Col className="m-2"></Col>
       </Row>

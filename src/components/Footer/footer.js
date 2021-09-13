@@ -6,7 +6,7 @@ export default function Footer() {
     <Fragment>
       <div
         style={{
-          height: "70px",
+          height: "90px",
           width: "100%",
           backgroundColor: "#8a8d8f",
           borderTopRightRadius: "15px",
@@ -14,12 +14,12 @@ export default function Footer() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-around",
-          alignItems: "flex-end",
+          alignItems: "flex-start",
           padding: "15px",
         }}
       >
         <div>
-          <Row>
+          <Row xs={1} md={1} lg={1}>
             <Col>
               <a
                 style={{ textDecoration: "none", fontSize: "18px" }}
@@ -31,10 +31,6 @@ export default function Footer() {
                 <small> @sanantostexmextacos</small>
               </a>
             </Col>
-          </Row>
-        </div>
-        <div>
-          <Row>
             <Col>
               <small className="text-white" style={{ fontSize: "11px" }}>
                 Design & Development by{" "}
