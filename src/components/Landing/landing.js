@@ -1,25 +1,53 @@
 import React, { Fragment } from "react";
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col, Button, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Menu from "../Menu/menu";
+import logo from "../../assets/IMG_6440-removebg-preview.png";
+import { motion } from "framer-motion";
+
+const exit = {
+  exit: {
+    opacity: 0,
+  },
+};
+
+const transition = {
+  duration: 0.5,
+  ease: [0.43, 0.13, 0.23, 0.96],
+};
 
 export default function Landing() {
   return (
-    <Fragment>
+    <motion.div {...exit} transitioin={transition} style={{ height: "100vh" }}>
       <section
         style={{
-          height: "100vh",
+          height: "100%",
           width: "100%",
           backgroundColor: "#171717",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
+          justifyContent: "space-between",
           alignItems: "center",
           alignSelf: "center",
           borderColor: "transparent",
         }}
         className="text-end"
       >
+        <Row>
+          <Col className="text-center">
+            <Image
+              style={{
+                maxHeight: "250px",
+                maxWidth: "250px",
+                height: "150px",
+                width: "150px",
+              }}
+              src={logo}
+              alt="logo"
+              width={100}
+              height={100}
+            />
+          </Col>
+        </Row>
         <Row xs={1} md={1} lg={1}>
           <Col>
             <h1 className="neonText">
@@ -27,8 +55,8 @@ export default function Landing() {
             </h1>
           </Col>
         </Row>
-        <Row className="pt-5">
-          <Col className="text-center" style={{ paddingTop: "55%" }}>
+        <Row style={{ height: "150px" }}>
+          <Col>
             <span
               style={{
                 display: "flex",
@@ -39,17 +67,22 @@ export default function Landing() {
               className="text-muted"
             >
               <Button
-                variant="outline-light"
+                variant="dark"
+                style={{
+                  borderColor: "#ff8200",
+                  backgroundColor: "transparent",
+                  color: "#00b2a9",
+                }}
                 className="text-uppercase"
                 as={Link}
                 to="/menu"
               >
-                Find us
+                Menu
               </Button>
             </span>
           </Col>
         </Row>
       </section>
-    </Fragment>
+    </motion.div>
   );
 }

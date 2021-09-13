@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // components
@@ -7,12 +8,12 @@ import Routes from "./components/Routes/routes";
 function App() {
   return (
     <Router>
-      <Fragment>
+      <AnimatePresence exitBeforeEnter>
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route component={Routes} />
         </Switch>
-      </Fragment>
+      </AnimatePresence>
     </Router>
   );
 }

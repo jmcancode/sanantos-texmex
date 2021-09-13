@@ -7,26 +7,76 @@ import bRed from "../../assets/bigred.png";
 import sweetTea from "../../assets/crystal-huff-CCowelQ2pLw-unsplash.jpg";
 import water from "../../assets/lennart-schneider-RjiHJrowSi8-unsplash.jpg";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
+const exit = {
+  exit: {
+    opacity: 0,
+  },
+};
+
+const transition = {
+  duration: 0.5,
+  ease: [0.43, 0.13, 0.23, 0.96],
+};
 
 export default function Menu() {
   return (
     <Fragment>
-      <motion.div className="container">
-        <Row >
-          <Col className="m-2">
-            <p>Breakfast Tacos</p>
-            <small className="text-muted">
-              All of our tacos are made fresh daily with local Texas
-              ingredients.
-            </small>
+      <motion.div {...exit} transition={transition} className="container">
+        <Row className="p-3">
+          <Col
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            <Link to="/" style={{ textDecoration: "none", color: "#ef426f" }}>
+              {" "}
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M21 11L6.414 11 11.707 5.707 10.293 4.293 2.586 12 10.293 19.707 11.707 18.293 6.414 13 21 13z"></path>
+              </svg>
+              <span style={{ fontFamily: "Caveat" }}>go back</span>
+            </Link>
+            <Link
+              to="/contact"
+              style={{ textDecoration: "none", color: "#ef426f" }}
+            >
+              <span style={{ fontFamily: "Caveat" }}>find us</span>
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M85 277.375h259.704L225.002 397.077 256 427l171-171L256 85l-29.922 29.924 118.626 119.701H85v42.75z"></path>
+              </svg>
+            </Link>
+          </Col>
+        </Row>
+
+        <Row xs={1} md={1} lg={1} className="pt-4">
+          <Col>
+            <h1 style={{ color: "#ff8200" }}>Menu</h1>
           </Col>
           <Col className="m-2">
-            <p> Add to your order</p>
-            <ul>
-              <li>Add Cheese</li>
-              <li>Add Bacon</li>
-            </ul>
+            <h5>Breakfast Tacos</h5>
+            <small className="text-muted">
+              Our tacos are made fresh daily using local Texas ingredients. Just
+              ask to add extra cheese or bacon on your tacos!
+            </small>
           </Col>
         </Row>
         <Row xs={1} md={3} lg={3}>
@@ -54,7 +104,12 @@ export default function Menu() {
             </Card>
           </Col>
           <Col>
-            <Card className="m-2">
+            <Card
+              className="m-2"
+              style={{
+                borderColor: "transparent",
+              }}
+            >
               <Card.Img
                 src={image2}
                 alt="image"
@@ -72,7 +127,12 @@ export default function Menu() {
             </Card>
           </Col>
           <Col>
-            <Card className="m-2">
+            <Card
+              className="m-2"
+              style={{
+                borderColor: "transparent",
+              }}
+            >
               <Card.Img
                 src={image}
                 alt="image"
@@ -90,7 +150,12 @@ export default function Menu() {
             </Card>
           </Col>
           <Col>
-            <Card className="m-2">
+            <Card
+              className="m-2"
+              style={{
+                borderColor: "transparent",
+              }}
+            >
               <Card.Img
                 src={image2}
                 alt="image"
@@ -108,7 +173,12 @@ export default function Menu() {
             </Card>
           </Col>
           <Col>
-            <Card className="m-2">
+            <Card
+              className="m-2"
+              style={{
+                borderColor: "transparent",
+              }}
+            >
               <Card.Img
                 src={image}
                 alt="image"
@@ -126,7 +196,12 @@ export default function Menu() {
             </Card>
           </Col>
           <Col>
-            <Card className="m-2">
+            <Card
+              className="m-2"
+              style={{
+                borderColor: "transparent",
+              }}
+            >
               <Card.Img
                 src={image2}
                 alt="image"
@@ -144,7 +219,12 @@ export default function Menu() {
             </Card>
           </Col>
           <Col>
-            <Card className="m-2">
+            <Card
+              className="m-2"
+              style={{
+                borderColor: "transparent",
+              }}
+            >
               <Card.Img
                 src={image}
                 alt="image"
@@ -193,7 +273,12 @@ export default function Menu() {
             </Card>
           </Col>
           <Col>
-            <Card className="m-2">
+            <Card
+              className="m-2"
+              style={{
+                borderColor: "transparent",
+              }}
+            >
               <Card.Img
                 src={bRed}
                 alt="image"
@@ -212,7 +297,12 @@ export default function Menu() {
             </Card>
           </Col>
           <Col>
-            <Card className="m-2">
+            <Card
+              className="m-2"
+              style={{
+                borderColor: "transparent",
+              }}
+            >
               <Card.Img
                 src={sweetTea}
                 alt="image"
@@ -231,7 +321,12 @@ export default function Menu() {
             </Card>
           </Col>
           <Col>
-            <Card className="m-2">
+            <Card
+              className="m-2"
+              style={{
+                borderColor: "transparent",
+              }}
+            >
               <Card.Img
                 src={water}
                 alt="image"
