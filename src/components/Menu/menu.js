@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { Card, Col, Row } from "react-bootstrap";
+import React, { Fragment, useState } from "react";
+import { Card, Col, Row, Image, Form } from "react-bootstrap";
 // images
 import image from "../../assets/besttaco.webp";
 import image2 from "../../assets/satacos.webp";
@@ -7,12 +7,13 @@ import lemon from "../../assets/laura-chouette-TecD-1MTMiE-unsplash.webp";
 import bRed from "../../assets/bigred.webp";
 import sweetTea from "../../assets/crystal-huff-CCowelQ2pLw-unsplash.webp";
 import water from "../../assets/lennart-schneider-RjiHJrowSi8-unsplash.webp";
+import logo from "../../assets/IMG_6440-removebg-preview.png";
 // animation
 import { motion } from "framer-motion";
 // routing
 import { Link } from "react-router-dom";
-// custom components
-import Footer from "../Footer/footer";
+// firebase config
+import { db } from "../../firebase/config";
 
 const exit = {
   exit: {
@@ -26,9 +27,29 @@ const transition = {
 };
 
 export default function Menu() {
+  const [email, setEmail] = useState("");
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    db.collection("subscribers")
+      .add({
+        email: email,
+      })
+      .then(() => {
+        alert(
+          "Thanks for joining the San Anto's Tex-Mex Tacos mailing list! We can't wait to see you opening day."
+        );
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+
+    setEmail("");
+  };
   return (
     <Fragment>
-      <motion.div {...exit} transition={transition} className="container">
+      <motion.div {...exit} transition={transition}>
         <Row className="p-3">
           <Col
             style={{
@@ -42,7 +63,7 @@ export default function Menu() {
               <svg
                 stroke="currentColor"
                 fill="currentColor"
-                stroke-width="0"
+                strokeWidth="0"
                 viewBox="0 0 24 24"
                 height="1em"
                 width="1em"
@@ -60,7 +81,7 @@ export default function Menu() {
               <svg
                 stroke="currentColor"
                 fill="currentColor"
-                stroke-width="0"
+                strokeWidth="0"
                 viewBox="0 0 512 512"
                 height="1em"
                 width="1em"
@@ -352,8 +373,67 @@ export default function Menu() {
           </Col>
         </Row>
       </motion.div>
-      <div className="pt-4">
-        <Footer />
+      <div
+        className="pt-5 pb-5 p-4"
+        style={{
+          width: "100%",
+          backgroundColor: "#171717",
+        }}
+      >
+        <Row xs={1} md={1} lg={1} className="p-3">
+          <Col className="text-center pb-5">
+            <Link to="/">
+              <Image
+                src={logo}
+                width={100}
+                height={100}
+                alt="logo"
+                style={{ height: "80px", width: "80px" }}
+              />
+            </Link>
+          </Col>
+          <Col className="text-center">
+            <Form onSubmit={onSubmit}>
+              <Form.Group>
+                <Form.Control
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="subscribe"
+                  style={{
+                    width: "100%",
+                    borderTopColor: "transparent",
+                    borderLeftColor: "transparent",
+                    borderRightColor: "transparent",
+                    borderBottomLeftRadius: "0px",
+                    borderBottomRightRadius: "0px",
+                    backgroundColor: "rgb(255,255,255,0.1)",
+                  }}
+                />
+              </Form.Group>
+              <Form.Text style={{ fontSize: "12px" }} className="text-center">
+                Stay current and subscribe to our mailing list. We promise not
+                to spam you!
+              </Form.Text>
+            </Form>
+          </Col>
+          <Col className="text-center pt-4">
+            <small style={{ fontSize: "12px" }} className="text-muted">
+              All Rights Reserved San Anto's Tex-Mex Tacos
+            </small>
+            <small style={{ fontSize: "12px" }} className="text-muted">
+              Design & Development by{" "}
+              <a
+                href="https://www.jonmichaelnarvaez.com"
+                rel="noopener"
+                target="__blank"
+                style={{ textDecoration: "none", color: "#c60000" }}
+              >
+                JM
+              </a>
+            </small>
+          </Col>
+        </Row>
       </div>
     </Fragment>
   );

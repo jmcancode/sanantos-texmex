@@ -6,32 +6,21 @@ export default function Footer() {
     <Fragment>
       <div
         style={{
-          height: "90px",
+          height: "120px",
           width: "100%",
           backgroundColor: "#8a8d8f",
-          borderTopRightRadius: "15px",
-          borderTopLeftRadius: "15px",
+          borderTopRightRadius: "5px",
+          borderTopLeftRadius: " 5px",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-around",
-          alignItems: "flex-start",
+          justifyContent: "space-between",
+          alignItems: "center",
           padding: "15px",
         }}
       >
         <div>
-          <Row xs={1} md={1} lg={1}>
-            <Col>
-              <a
-                style={{ textDecoration: "none", fontSize: "18px" }}
-                href="https://www.instagram.com/sanantostexmextacos"
-                target="__blank"
-                rel="noopener"
-                className="text-end text-white"
-              >
-                <small> @sanantostexmextacos</small>
-              </a>
-            </Col>
-            <Col>
+          <Row xs={1} md={1} lg={1} className="pt-3">
+            <Col className="text-center">
               <small className="text-white" style={{ fontSize: "11px" }}>
                 Design & Development by{" "}
                 <a
