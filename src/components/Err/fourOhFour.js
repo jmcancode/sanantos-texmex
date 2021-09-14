@@ -17,7 +17,7 @@ export default function FourOhFour() {
       >
         <Row>
           <Col>
-            <h1 className="neonText">Nommbree shuuuut up! 404 Error</h1>
+            <h1 className="neonText">Nommbree Chuuuut up! 404 Error</h1>
           </Col>
         </Row>
         <Row className="text-center pt-5 mt-4">

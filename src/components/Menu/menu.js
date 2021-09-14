@@ -421,6 +421,7 @@ export default function Menu() {
             <small style={{ fontSize: "12px" }} className="text-muted">
               All Rights Reserved San Anto's Tex-Mex Tacos
             </small>
+            <br />
             <small style={{ fontSize: "12px" }} className="text-muted">
               Design & Development by{" "}
               <a
